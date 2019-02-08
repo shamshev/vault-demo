@@ -27,9 +27,8 @@ def main():
         url=VAULT_URL,
         token=args.token
     )
-
+    
     show_kv(client,"t-systems/cloud_billing/" + args.env + "/application")
-    show_kv(client,"t-systems/cloud_billing/" + args.env + "/database")
 
 
 if __name__ == '__main__':

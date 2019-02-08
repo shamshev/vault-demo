@@ -6,6 +6,7 @@ import argparse
 VAULT_URL='http://127.0.0.1:8200'
 
 
+#Example function to rewrite kv-entry
 def write_kv(client):
     print('[INFO] Update kv example for dev')
     client.secrets.kv.v2.create_or_update_secret(
@@ -15,6 +16,7 @@ def write_kv(client):
     ))
 
 
+#Example function to path one key in kv-entry
 def patch_kv(client):
     print('[INFO] Path kv example for dev')
     client.secrets.kv.v2.patch(
