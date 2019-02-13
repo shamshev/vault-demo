@@ -39,7 +39,6 @@ def create_kv(client):
             environment='prod',
             log_level='warning'
     ))
-    print('[INFO] Done')
 
 
 #Create policy for full access to specific environment
@@ -50,6 +49,7 @@ def create_policy(client, env):
     """ % env
     policy_name = "my-policy-" + env
     client.sys.create_or_update_policy(name=policy_name, policy=policy_body)
+    print('[INFO] Create policy for {value} environment'.format(value=env))
 
 
 #Create read-only policy
@@ -59,6 +59,7 @@ def create_read_policy(client):
         capabilities = ["read", "list"]}
     """
     client.sys.create_or_update_policy(name='my-policy-read', policy=policy_body)
+    print('[INFO] Create read policy')
 
 
 #Create read-restricted policy
@@ -71,6 +72,7 @@ def create_secure_policy(client):
         capabilities = ["deny"]}
     """
     client.sys.create_or_update_policy(name='my-policy-secure', policy=policy_body)
+    print('[INFO] Create secure policy')
 
 
 def main():
@@ -88,7 +90,6 @@ def main():
     create_policy(client, 'dev')
     create_policy(client, 'prod')
     create_read_policy(client)
-    create_write_policy(client)
     create_secure_policy(client)
 
 
