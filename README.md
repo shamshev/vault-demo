@@ -27,11 +27,9 @@ Login to vault with root token and generate another token:
 
 Use this new token to login to Web UI
 
-## Examples
+## Example - read
 
-1. Read kv from Vault
-
-1.a. Standard situation
+1. Standard situation
 
 Generate token for read-only access:
 
@@ -43,7 +41,7 @@ Test scripts:
 
 `python read.py -e prod -t <token>`
 
-1.b. Restricted access:
+2. Restricted access:
 
 Generate token for restricted access:
 
@@ -51,7 +49,7 @@ Generate token for restricted access:
 
 Test scripts - from 1.a.
 
-1.c. One-time password
+3. One-time password
 
 Generate token for restricted access:
 
@@ -59,7 +57,7 @@ Generate token for restricted access:
 
 Test scripts - run first script from 1.a. twice
 
-2. Write kv to Vault
+## Example - write
 
 Generate token with write access to dev environment:
 
